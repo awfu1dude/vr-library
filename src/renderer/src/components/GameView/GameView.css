@@ -1,0 +1,476 @@
+.gameplay {
+    float: right;
+    width: calc(100% - var(--sidebar-width));
+    height: 100vh;
+    margin-top: var(--titlebar-height);
+    object-fit: cover;
+    background: #000;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--titlebar-height));
+    padding: 10px 20px;
+    gap: 20px;
+    background: var(--color-background-500);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.content .bg-blur {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    filter: blur(50px);
+    opacity: 0.3;
+    transform: scale(1.2);
+}
+
+.content .game {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.content .game .poster {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    background: #000;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.content .game .poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content .game h1 {
+    font-size: 24px;
+    color: var(--color-primary);
+    margin-bottom: 0;
+}
+
+.content .btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.content .btn {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    color: var(--color-background);
+    background: var(--color-primary);
+    border: 2px solid transparent;
+    font-weight: 700;
+    gap: 5px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .1s;
+}
+
+.content .btn.more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 2px solid transparent;
+    gap: 0;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.content .btn:hover {
+    color: var(--color-primary);
+    background: transparent;
+    border: 2px solid var(--color-primary);
+}
+
+.content .btn.more:hover {
+    background: var(--color-primary-100);
+    border: 2px solid transparent;
+}
+
+.content .btn:active {
+    color: var(--color-primary);
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    opacity: .6;
+}
+
+.content .btn.more:active {
+    color: var(--color-primary);
+    background: var(--color-primary-100);
+    border: 2px solid var(--color-primary);
+    opacity: 1;
+}
+
+.content .btn.play .icon {
+    width: 15px;
+    height: 20px;
+    background: var(--color-background);
+    transition: all .1s;
+}
+
+.content .btn.more .icon {
+    width: 15px;
+    height: 20px;
+    background: var(--color-primary);
+    transition: all .1s;
+}
+
+.content .btn:hover .icon {
+    background: var(--color-primary);
+}
+
+.content .btn:active .icon {
+    background: var(--color-primary);
+}
+
+.play .icon {
+    mask: url('../../assets/icons/play.svg') no-repeat center;
+    transform: scale(.8);
+}
+
+.more .icon {
+    mask: url('../../assets/icons/more_v.svg') no-repeat center;
+    transform: scale(.8);
+}
+
+.content .game p {
+    font-size: 13px;
+    color: var(--color-primary-500);
+}
+
+.content .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.content .tags .tag-item {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    background: var(--color-primary-200);
+}
+
+.content .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    z-index: 5;
+}
+
+.content .gallery .gallery-view {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.content .gallery .gallery-item {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border-radius: 5px;
+    background: #000;
+    overflow: hidden;
+    outline: 2px solid transparent;
+    cursor: pointer;
+    transition: all .1s;
+}
+
+.content .gallery .gallery-item:hover {
+    outline: 2px solid var(--color-primary);
+}
+
+.content .gallery .gallery-item:active {
+    opacity: 0.5;
+    transform: scale(.9);
+    outline: 2px solid var(--color-primary);
+}
+
+.content .gallery .gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pagination {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-background-500);
+    backdrop-filter: blur(50px);
+    padding: 8px 10px;
+    border: 1px solid var(--color-primary-100);
+    border-radius: 20px;
+    z-index: 5;
+}
+
+.pagination .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    outline: 2px solid transparent;
+    cursor: pointer;
+    transition: all .1s;
+}
+
+.pagination .btn:hover {
+    background: var(--color-primary-200);
+}
+
+.pagination .btn:active {
+    background: var(--color-primary-200);
+    outline: 2px solid var(--color-primary);
+    transform: scale(.9);
+}
+
+.pagination .btn .icon {
+    width: 30px;
+    height: 30px;
+    background: var(--color-primary);
+    transform: scale(1);
+}
+
+.btn.prev .icon {
+    mask: url('../../assets/icons/prev.svg') no-repeat center;
+}
+
+.btn.next .icon {
+    mask: url('../../assets/icons/next.svg') no-repeat center;
+}
+
+.pagination .dots {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination .dots .dot {
+    width: 12px;
+    height: 12px;
+    background: var(--color-primary-100);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .1s;
+}
+
+.pagination .dots .dot:hover {
+    border: 2px solid var(--color-primary);
+    transform: translateY(-2px) scale(1.2);
+}
+
+
+.pagination .dots .dot:active {
+    border: 2px solid var(--color-primary);
+    transform: scale(1);
+}
+
+.pagination .dots .dot.current {
+    background: var(--color-primary);
+}
+
+.gallery-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 8;
+}
+
+.gallery-modal .image-blur {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 70%;
+    aspect-ratio: 16 / 9;
+    opacity: .8;
+    filter: blur(30px);
+    z-index: 5;
+}
+
+.gallery-modal .gallery-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 70%;
+    z-index: 8;
+}
+
+.gallery-modal .gallery-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 5px;
+    background: #000;
+    overflow: hidden;
+}
+
+.gallery-modal .gallery-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-modal .controls {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%, 0);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-background-500);
+    backdrop-filter: blur(50px);
+    padding: 8px 10px;
+    border: 1px solid var(--color-primary-100);
+    border-radius: 20px;
+    z-index: 8;
+}
+
+
+.gallery-modal .controls .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    outline: 2px solid transparent;
+    cursor: pointer;
+    transition: all .1s;
+}
+
+.gallery-modal .controls .btn:hover {
+    background: var(--color-primary-200);
+}
+
+.gallery-modal .controls .btn:active {
+    background: var(--color-primary-200);
+    outline: 2px solid var(--color-primary);
+    transform: scale(.9);
+}
+
+.gallery-modal .controls .btn .icon {
+    width: 30px;
+    height: 30px;
+    background: var(--color-primary);
+    transform: scale(1);
+}
+
+
+.gallery-modal .controls .dots {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gallery-modal .controls .dots .dot {
+    width: 12px;
+    height: 12px;
+    background: var(--color-primary-100);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .1s;
+}
+
+.gallery-modal .controls .dots .dot:hover {
+    border: 2px solid var(--color-primary);
+    transform: translateY(-2px) scale(1.2);
+}
+
+
+.gallery-modal .controls .dots .dot:active {
+    border: 2px solid var(--color-primary);
+    transform: scale(1);
+}
+
+.gallery-modal .controls .dots .dot.current {
+    background: var(--color-primary);
+}
+
+.btn.hide {
+    position: absolute;
+    right: 10px;
+    top: calc(10px + var(--titlebar-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    outline: 2px solid transparent;
+    cursor: pointer;
+    transition: all .1s;
+}
+
+.btn.hide:hover {
+    background: var(--color-primary-100);
+}
+
+.btn.hide:active {
+    transform: scale(.9);
+    outline: 2px solid var(--color-primary);
+    background: var(--color-primary-100);
+}
+
+.btn.hide:hover .icon {
+    background: var(--color-primary);
+}
+
+.btn.hide:active .icon {
+    background: var(--color-primary);
+}
+
+.btn.hide .icon {
+    width: 30px;
+    height: 30px;
+    background: var(--color-primary-500);
+    mask: url('../../assets/icons/hide.svg') no-repeat center;
+    transition: all .1s;
+}
+
+@media (max-height: 700px) {
+    .content .game p {
+        display: -webkit-box;
+        line-clamp: 4;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

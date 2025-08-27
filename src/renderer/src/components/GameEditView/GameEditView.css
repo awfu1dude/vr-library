@@ -1,0 +1,88 @@
+.game-edit {
+    margin-top: var(--titlebar-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - var(--titlebar-height));
+    padding: 20px;
+}
+
+.game-edit h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.game-edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 15px;
+}
+
+.game-edit-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.game-edit-form-field p {
+    color: var(--color-primary-500);
+}
+
+.game-edit-form-field input {
+    width: 500px;
+    padding: 10px;
+    border-radius: 8px;
+    color: var(--color-primary);
+    border: none;
+    outline: 1px solid var(--color-primary-200);
+    background: var(--color-primary-100);
+    transition: all .1s;
+}
+
+.game-edit-form-field input:focus {
+    outline: 2px solid var(--color-primary);
+}
+
+.game-edit-form-field input::selection {
+    color: var(--color-background);
+    background: var(--color-primary);
+}
+
+.game-edit-form .btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.game-edit-form .btn {
+    width: fit-content;
+    text-align: center;
+    padding: 8px 16px;
+    color: var(--color-background);
+    background: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .1s;
+}
+
+.game-edit-form .btn.cancel {
+    color: var(--color-primary);
+    background: var(--color-primary-100);
+    border: 2px solid transparent;
+}
+
+.game-edit-form .btn:hover {
+    color: var(--color-primary);
+    background: transparent;
+}
+
+.game-edit-form .btn:active {
+    opacity: 0.6;
+    color: var(--color-primary);
+    background: transparent;
+}
